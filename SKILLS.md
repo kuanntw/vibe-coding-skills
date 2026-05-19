@@ -18,6 +18,7 @@
 - [技能 7：Explaining Code（解釋程式碼）](#技能-7explaining-code解釋程式碼)
 - [技能 8：Documentation Generation（產生文件）](#技能-8documentation-generation產生文件)
 - [進階技能](#進階技能)
+- [外部技能整合（Andrej Karpathy Skills）](#外部技能整合andrej-karpathy-skills)
 - [常見陷阱與解法](#常見陷阱與解法)
 
 ---
@@ -436,6 +437,48 @@ criteria = { age: ">= 18", active: true }
 2. 可能的根本原因是什麼？
 3. 建議的修復步驟？
 ```
+
+
+---
+
+## 外部技能整合（Andrej Karpathy Skills）
+
+> 來源：<https://github.com/kuanntw/andrej-karpathy-skills>  
+> 目標：把外部通用技能整合進本專案流程，保留可追蹤的引用方式，供後續開發沿用。
+
+### 整合策略
+
+1. **本地優先**：以本 repo 的 `CONTEXT.md`、`WORKFLOW.md`、`SKILLS.md` 為主體。  
+2. **外部補強**：引用外部技能時，先轉成「可執行任務 + 驗證條件」。  
+3. **可追蹤**：每次引用請寫入日誌（例如 `logs/implementation-log.md`），避免知識斷層。
+
+### 對照映射（External → Local）
+
+| 外部技能用途 | 建議對應本地技能 | 使用時機 |
+|---|---|---|
+| Task planning / decomposition | 技能 2：Task Execution、進階技能「小步迭代拆分」 | 需求很大、需要切成可落地子任務 |
+| Debug / root cause analysis | 技能 4：Bug Investigation | 先找根因，再決定修法 |
+| Test-first development | 技能 3：Test Generation | 想降低回歸風險、提高可維護性 |
+| Review / improvement loops | 技能 5：Code Review、技能 6：Refactoring | 上線前品質把關與整理技術債 |
+| Docs and handoff | 技能 8：Documentation Generation | 交接、PR 說明、API 變更紀錄 |
+
+### 引用範本（給將來開發使用）
+
+```markdown
+## Skills Reference
+- Local Skill: SKILLS.md → {{技能名稱}}
+- External Skill: kuanntw/andrej-karpathy-skills → {{章節/模板名稱}}
+- Why: {{本次為什麼要引用這個技能}}
+- Adaptation: {{你如何改寫成專案可執行版本}}
+```
+
+### 參考資料
+
+- External repo: <https://github.com/kuanntw/andrej-karpathy-skills>
+- Local guide: [README.md](./README.md)
+- Local workflow: [WORKFLOW.md](./WORKFLOW.md)
+- Local principles: [PRINCIPLES.md](./PRINCIPLES.md)
+
 
 ---
 
