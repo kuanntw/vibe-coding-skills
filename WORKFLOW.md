@@ -124,6 +124,8 @@
 
 ### Step 5：驗收
 
+依 [可重複驗收與證據](TESTING.md#可重複驗收與證據) 對照每個 acceptance criterion，記錄方法、環境、實際結果與證據。以下 npm 命令是範例，應改用目標專案實際存在的檢查；未執行不能勾選通過。
+
 ```
 □ 程式碼可正常執行無錯誤
 □ 核心功能正常運作
@@ -157,8 +159,13 @@
 
 ### Step 7：Commit & Push
 
+以下僅示範流程，不代表已獲授權。暫存、commit、push 與其他發布動作都需使用者對動作及目標的明確授權；若未取得則先詢問。只暫存本任務已審查的檔案，不包含其他工作或敏感資訊。
+
 ```bash
-git add .
+git status --short
+git diff
+git add -- {{已確認的檔案路徑}}
+git diff --cached
 git commit -m "feat: {{簡短描述}}
 
 Task: {{TASK-XXX}}
@@ -446,6 +453,8 @@ git commit -m "refactor: {{具體變更內容}}"
 └───────────────────────────────────────────┘
 ```
 
+快速流程仍需保留 [最小驗收證據](TESTING.md#可重複驗收與證據)，可用單段紀錄，不必擴充成完整 feature spec。
+
 **使用時機：**
 - 修正錯字
 - 小範圍樣式調整
@@ -670,6 +679,6 @@ git commit -m "fix: {{簡短描述}}"
 ## 結束時
 □ 更新 logs/implementation-log.md
 □ 更新 logs/decisions-log.md（如果有重要決策）
-□ Commit 所有變更
-□ Push 到 remote
+□ 確認授權後，只 Commit 本任務已審查的變更
+□ 確認目標與 Push 授權後，再 Push 到 remote
 ```

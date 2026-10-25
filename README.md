@@ -51,6 +51,8 @@ AI Coding Assistant（Claude Code、Cursor、GitHub Copilot 等）能大幅加�
 
 ### 1. 從這裡開始
 
+支援標準 skill 的工具可從 [SKILL.md](SKILL.md) 載入；它只提供既有文件的薄入口與任務路由，不增加工具權限。手動使用者仍可沿用下列閱讀順序。
+
 ```bash
 # 閱讀核心文件（建議順序）
 1. README.md     ← 你在這裡
@@ -92,6 +94,7 @@ AI Coding Assistant（Claude Code、Cursor、GitHub Copilot 等）能大幅加�
 
 | 文件 | 用途 | 何時閱讀 |
 |------|------|----------|
+| [SKILL.md](./SKILL.md) | 標準 skill 入口與任務路由 | 🤖 由支援 skill 的工具載入時 |
 | [PRINCIPLES.md](./PRINCIPLES.md) | Harmless Engineering 工程原則 | 🚨 **必讀！** 第一次使用前 |
 | [CONTEXT.md](./CONTEXT.md) | 專案上下文（技術棧、風格、結構） | 📝 每個專案開始時填寫 |
 | [WORKFLOW.md](./WORKFLOW.md) | 開發工作流程（標準循環、Bug修復、重構等） | 🔄 每天開發時參考 |
@@ -119,3 +122,12 @@ AI Coding Assistant（Claude Code、Cursor、GitHub Copilot 等）能大幅加�
 ---
 
 > *「Vibe Coding 不是放手讓 AI 亂寫，而是給 AI 夠好的上下文，讓它寫出你真正想要的程式碼。」*
+
+## Revision History（修訂紀錄）
+
+### 2026-10-25
+
+- 新增薄型 `SKILL.md` 標準入口與任務路由，沿用既有繁體中文框架、原則與日誌規範，不新增工具權限。
+- 補上可重複的驗收條件、方法、環境、結果與證據格式；快速流程可保留單段紀錄。暫存、commit 與 push 仍須明確授權且只涵蓋已審查的任務檔案。
+- 已驗證：入口 frontmatter 可解析、名稱與描述格式、相對文件連結及新增錨點、變更空白檢查；核心原則、上下文、提示詞與日誌規範保持原內容。
+- 驗證限制：此為文件與流程更新，未執行範例專案的單元、整合、E2E 或部署測試；未安裝或執行外部技能，也未宣稱執行期測試通過。
